@@ -1,0 +1,24 @@
+<div id="container">
+  <img src="{{url}}" class="background">
+
+  <div class="header">
+    <div class="container">
+      <div class="header-menu">
+        <div class="logo">
+          <img src="goHome()" src="http://haintheme.com/demo/wp/buster/wp-content/themes/blockter/images/lg.png">
+        </div>
+        <div class="menu">
+          <ul class="ul-menu">
+            <li class="li home" (click)="goHome()">HOME</li>
+            <li class="li movies" >MOVIES <mat-icon>keyboard_arrow_down</mat-icon>
+              <!--<mat-menu #movies="matMenu" [overlapTrigger]="false" >-->
+                <!--<button (click)="getFilmByType('Movie')" mat-menu-item>Movies</button>-->
+                <!--<button (click)="getFilmByType('Series-Movie')" mat-menu-item>Series Movies</button>-->
+              <!--</mat-menu>-->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
