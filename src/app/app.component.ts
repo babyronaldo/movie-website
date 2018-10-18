@@ -46,4 +46,28 @@ export class AppComponent implements OnInit {
     this.store.dispatch(new BackgroundDataActions.AddBackgroundData({url: this.initialUrl}));
     this.route.navigate(['/']);
   }
+
+  getFilmByType(type) {
+    let name: string;
+    name = 'T_' + '\'' + type + '\'';
+    this.route.navigate(['/genre/' + name]);
+  }
+
+
+  selectGenre(item: Kind) {
+    let name: string;
+    name = item.kind_name;
+    name = 'G_' + item.id + '_' + name.split(' ').join('_');
+    this.route.navigate(['/genre/' + name]);
+  }
+
+  selectCountry(item: Country) {
+    let name: string;
+    name = item.country_name;
+    name = 'C_' + item.id + '_' + name.split(' ').join('_');
+    this.route.navigate(['/genre/' + name]);
+  }
+  aboutUs() {
+    window.scroll(9999, 9999);
+  }
 }

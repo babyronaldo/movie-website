@@ -11,11 +11,20 @@
           <ul class="ul-menu">
             <li class="li home" (click)="goHome()">HOME</li>
             <li class="li movies" >MOVIES <mat-icon>keyboard_arrow_down</mat-icon>
-              <!--<mat-menu #movies="matMenu" [overlapTrigger]="false" >-->
-                <!--<button (click)="getFilmByType('Movie')" mat-menu-item>Movies</button>-->
-                <!--<button (click)="getFilmByType('Series-Movie')" mat-menu-item>Series Movies</button>-->
-              <!--</mat-menu>-->
+              <mat-menu #movies="matMenu" [overlapTrigger]="false" >
+                <button (click)="getFilmByType('Movie')" mat-menu-item>Movies</button>
+                <button (click)="getFilmByType('Series-Movie')" mat-menu-item>Series Movies</button>
+              </mat-menu>
             </li>
+            <li class="li tvshows" [matMenuTriggerFor]="tvshows">GENRES<mat-icon>keyboard_arrow_down</mat-icon></li>
+            <mat-menu #tvshows="matMenu" [overlapTrigger]="false" >
+              <button (click)="selectGenre(item)" mat-menu-item *ngFor="let item of kinds">{{item.kind_name}}</button>
+            </mat-menu>
+            <li class="li news" [matMenuTriggerFor]="news">COUNTRIES <mat-icon>keyboard_arrow_down</mat-icon></li>
+            <mat-menu #news="matMenu" [overlapTrigger]="false" >
+              <button (click)="selectCountry(item)" mat-menu-item *ngFor="let item of countries">{{item.country_name}}</button>
+            </mat-menu>
+            <li class="li aboutus" (click)="aboutUs()" >ABOUT US</li>
           </ul>
         </div>
       </div>
